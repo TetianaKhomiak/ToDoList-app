@@ -91,7 +91,7 @@ li {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  width: 250px;
+  width: 300px;
   margin-bottom: 10px;
   color: white;
   list-style: none;
@@ -112,6 +112,8 @@ li:before {
 
 .delete-btn,
 .edit-btn {
+  height: 30px;
+  width: 30px;
   background: linear-gradient(360deg, transparent, #03e9f4);
   border: none;
   color: white;

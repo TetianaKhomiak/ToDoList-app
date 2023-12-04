@@ -116,17 +116,37 @@ function removeAllTasks() {
   renderTasks();
 }
 
+// function filterTasks(event) {
+//   const searchQuery = event.target.value;
+//   const liCollection = taskList.querySelectorAll("li");
+
+//   liCollection.forEach((task) => {
+//     const liValue = task.firstChild.textContent;
+
+//     if (liValue.includes(searchQuery)) {
+//       task.style.display = "list-item";
+//     } else {
+//       task.style.display = "none";
+//     }
+//   });
+// }
+
 function filterTasks(event) {
-  const searchQuery = event.target.value;
+  const searchQuery = event.target.value.toLowerCase();
   const liCollection = taskList.querySelectorAll("li");
 
   liCollection.forEach((task) => {
-    const liValue = task.firstChild.textContent;
+    const liValue = task.firstChild.textContent.toLowerCase();
 
     if (liValue.includes(searchQuery)) {
-      task.style.display = "list-item";
+      if (task.style.display === "none") {
+        task.style.display = task.dataset.originalDisplay || "";
+      }
     } else {
-      task.style.display = "none";
+      if (task.style.display !== "none") {
+        task.dataset.originalDisplay = task.style.display;
+        task.style.display = "none";
+      }
     }
   });
 }
