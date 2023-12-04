@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,400;1,700&family=Roboto:wght@400;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(#354f7d, #436e9f);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 500px;
+  margin: 50px auto;
+  padding: 40px;
+  background: rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+  border-radius: 10px;
+}
+
+.container h3 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+}
+
+.filter-task-block {
+  margin: 20px;
+}
+
+.input-field {
+  position: relative;
+}
+
+input {
+  width: 95%;
+  padding: 10px 15px 10px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+}
+
+input::placeholder {
+  color: #03e9f4;
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+}
+
+.clear-tasks,
+.btn {
+  cursor: pointer;
+  width: 190px;
+  padding: 20px 15px;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+}
+
+.clear-tasks:hover,
+.btn:hover {
+  border: none;
+  background: #03e9f4;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+}
+
+ul {
+  margin-left: -20px;
+
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 250px;
+  margin-bottom: 10px;
+  color: white;
+  list-style: none;
+  font-family: 'Merriweather', serif;
+  font-size: 22px;
+
+}
+
+li:before {
+  content: url(IMG/check-solid.svg);
+  margin-right: 5px;
+  vertical-align: -3px;
+}
+
+.buttons-wrapper {
+  display: flex;
+}
+
+.delete-btn,
+.edit-btn {
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.delete-btn:hover,
+.edit-btn:hover {
+  background: #03e9f4;
+}
+
+.edit-btn::before {
+  content: url(IMG/edit-regular.svg);
+}
