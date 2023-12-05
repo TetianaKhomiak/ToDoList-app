@@ -155,7 +155,10 @@ function handleEditTask(event) {
   const taskElement = event.target.parentElement.parentElement;
   const tasks = JSON.parse(localStorage.getItem("tasks"));
   const taskId = taskElement.getAttribute("id");
-  const newTaskValue = prompt("Edit task:", taskElement.firstChild.textContent);
+  const newTaskValue = prompt(
+    "Редагувати завдання:",
+    taskElement.firstChild.textContent
+  );
 
   if (newTaskValue !== null && newTaskValue.trim() !== "") {
     tasks.forEach((task) => {
