@@ -137,10 +137,10 @@ function filterTasks(event) {
 
   liCollection.forEach((task) => {
     const liValue = task.firstChild.textContent.toLowerCase();
-
+    console.log(liValue);
     if (liValue.includes(searchQuery)) {
       if (task.style.display === "none") {
-        task.style.display = task.dataset.originalDisplay || "";
+        task.style.display = task.dataset.originalDisplay;
       }
     } else {
       if (task.style.display !== "none") {
