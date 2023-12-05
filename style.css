@@ -72,6 +72,10 @@ input::placeholder {
   font-size: 18px;
 }
 
+.clear-tasks {
+  margin-left: -20px;
+}
+
 .clear-tasks:hover,
 .btn:hover {
   border: none;

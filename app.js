@@ -151,23 +151,40 @@ function filterTasks(event) {
   });
 }
 
+// пощук через Id
+// function handleEditTask(event) {
+//   const taskElement = event.target.parentElement.parentElement;
+//   const tasks = JSON.parse(localStorage.getItem("tasks"));
+//   const taskId = taskElement.getAttribute("id");
+//   const newTaskValue = prompt(
+//     "Редагувати завдання:",
+//     taskElement.firstChild.textContent
+//   );
+
+//   if (newTaskValue !== null && newTaskValue.trim() !== "") {
+//     tasks.forEach((task) => {
+//       if (task.taskId == taskId) {
+//         task.value = newTaskValue;
+//       }
+//     });
+
+//     localStorage.setItem("tasks", JSON.stringify(tasks));
+//     taskElement.firstChild.textContent = newTaskValue;
+//   }
+// }
+
 function handleEditTask(event) {
   const taskElement = event.target.parentElement.parentElement;
+  const currentTaskValue = taskElement.firstChild.textContent;
   const tasks = JSON.parse(localStorage.getItem("tasks"));
-  const taskId = taskElement.getAttribute("id");
-  const newTaskValue = prompt(
-    "Редагувати завдання:",
-    taskElement.firstChild.textContent
-  );
+  const taskIndex = tasks.findIndex((task) => task.value === currentTaskValue);
+  const updatedTaskValue = prompt("Редагувати завдання:", currentTaskValue);
 
-  if (newTaskValue !== null && newTaskValue.trim() !== "") {
-    tasks.forEach((task) => {
-      if (task.taskId == taskId) {
-        task.value = newTaskValue;
-      }
-    });
-
+  if (updatedTaskValue !== null && updatedTaskValue.trim() !== "") {
+    tasks[taskIndex].value = updatedTaskValue;
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    taskElement.firstChild.textContent = newTaskValue;
+    taskElement.firstChild.textContent = updatedTaskValue;
+  } else {
+    return;
   }
 }
