@@ -101,6 +101,7 @@ li {
   list-style: none;
   font-family: 'Merriweather', serif;
   font-size: 22px;
+  word-break: break-all;
 
 }
 
