@@ -30,7 +30,7 @@ body {
 }
 
 .filter-task-block {
-  margin: 20px;
+  margin: 20px 0 20px;
 }
 
 .input-field {
@@ -70,10 +70,6 @@ input::placeholder {
   margin-top: 20px;
   font-family: 'Merriweather', serif;
   font-size: 18px;
-}
-
-.clear-tasks {
-  margin-left: -20px;
 }
 
 .clear-tasks:hover,
